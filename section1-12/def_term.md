@@ -1,0 +1,48 @@
+# The language of terms
+
+```plain
+t ::=
+  true
+  false
+  if t then t else t
+  0
+  succ t
+  pred t
+  iszero t
+```
+
+### Definition of terms (Inductively defined)
+
+```latex
+The set of terms is the smallest set $\mathcal{T}$ such that
+
+\begin{enumerate}
+\item { true, false, 0} $\subset \mathcal{T}$
+\item if $t_1 \in \mathcal{T}$, then $succ \ t_1$, $pred \ t_1$, and $iszero \ t_1 \in \mathcal{T}$
+\item if $t_1, t_2, t_3 \in \mathcal{T}$, then $if \ t_1 \ then \ t_2 \ else \ t_3 \in \mathcal{T}$
+\end{enumerate}
+```
+
+### Definition of terms (Inference rules)
+
+```latex
+\begin{eqnarray*}
+\mathrm{true} \in \mathcal{T} & \mathrm{false} \in \mathcal{T} & 0 \in \mathcal{T} \\
+\frac{t_1 \in \mathcal{T}}{\mathrm{succ} t_1 \in \mathcal{T}}
+& \frac{t_1 \in \mathcal{T}}{\mathrm{pred} t_1 \in \mathcal{T}}
+& \frac{t_1 \in \mathcal{T}}{\mathrm{iszero} t_1 \in \mathcal{T}} \\
+& \frac{t_1 \in \mathrm{T} \quad t_2 \in \mathrm{T} \quad t_3 \in \mathrm{T} \quad}{\mathrm{if} \ t_1 \ \mathrm{then} \ t_2 \ \mathrm{else} \ t_3 \in \mathcal{T}} &
+\end{eqnarray*}
+```
+
+### Definition of terms (Concrete structure)
+
+```latex
+\begin{eqnarray*}
+S_0 = & \emptyset & \\
+S_{i+1} = &  & { \mathrm{true}, \mathrm{false}, 0 } \\
+ &  \bigcup & \{ \mathrm{succ} \quad t_1, \mathrm{pred} \quad t_1, \mathrm{iszero} \quad t_1 \mid t_1 \in S_i \} \\  
+ &  \bigcup & \{ \mathrm{if} \quad t_1 \quad \mathrm{then} \quad t_2 \mathrm{else} \quad t_3 \| t_1, t_2, t_3 \in S_i \} \\  
+\end{eqnarray*}
+```
+
