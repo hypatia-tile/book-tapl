@@ -1,11 +1,15 @@
 # The Example of Compiling LaTeX File
 # In your latex repository, make .github/workflows/main.yml like below.
 # You only have to change `LATEX_FILE_NAME` as your tex file.
+# name: Release PDF
 
 on:
   push:
     tags:
       - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   test_job:
