@@ -1,0 +1,11 @@
+name: "platex Action"
+author: "hypatia"
+description: "Compile tex file with platex"
+inputs:
+  LATEX_FILE_NAME:
+    description: "Compile Tex File"
+    required: true
+    default: "section1-12/term-language.tex"
+  runs:
+    using: "docker"
+    image: "Dockerfile"
