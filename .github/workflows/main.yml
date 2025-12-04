@@ -25,6 +25,8 @@ jobs:
         uses: hypatia-tile/book-tapl@main
         with:
           LATEX_FILE_NAME: "section1-12/term-language.tex"
+        id: check pdf file
+        run: ls -la section1-12/term-language.pdf
       # Create Release
       - name: Create Release
         id: create_release
