@@ -27,7 +27,7 @@ jobs:
           LATEX_FILE_NAME: "section1-12/term-language.tex"
       - name: debug ls
         id: check_pdf_file
-        run: ls -la
+        run: ls -la build
       # Create Release
       - name: Create Release
         id: create_release
@@ -49,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./section1-12/term-language.pdf
-          asset_name: section1-12/term-language.pdf
+          asset_path: ./build/term-language.pdf
+          asset_name: build/term-language.pdf
           asset_content_type: application/pdf
