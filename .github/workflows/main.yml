@@ -26,7 +26,7 @@ jobs:
         with:
           LATEX_FILE_NAME: "section1-12/term-language.tex"
       - name: debug ls
-        id: check pdf file
+        id: check_pdf_file
         run: ls -la
       # Create Release
       - name: Create Release
