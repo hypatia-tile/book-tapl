@@ -6,6 +6,6 @@ inputs:
     description: "Compile Tex File"
     required: true
     default: "section1-12/term-language.tex"
-  runs:
-    using: "docker"
-    image: "Dockerfile"
+runs:
+  using: "docker"
+  image: "Dockerfile"
