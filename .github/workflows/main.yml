@@ -5,8 +5,8 @@
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Compile Tex File
         id: compile_tex_file
-        uses: hypatia-tile/book-tapl@main
+        uses: tsukuba-mas/platex-action@main
         with:
           LATEX_FILE_NAME: "section1-12/term-language.tex"
       # Create Release
